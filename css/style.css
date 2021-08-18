@@ -27,6 +27,11 @@
     font-family: var(--orbitron-font)
 }
 
+::selection{
+    background: var(--console-dark);
+    color: var(--console-primary-hover);
+}
+
 /* ------COLORS------ */
 body {
     color: var(--console-darker);
@@ -46,15 +51,11 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--console-primary);
 }
 
-.button-green {
-    color: var(--white-color);
-    background-color: var(--console-primary);
-}
-
-.navbar-brand, .nav-link, .text-green, .icon-green {
+.navbar-brand, .nav-link, .text-green, .icon-green, .border-green {
     color: var(--console-primary) !important;
 } 
 
+/* ICONS */
 .bsicon{
     color: #8312FA;
 }
@@ -69,6 +70,41 @@ h1, h2, h3, h4, h5, h6, p {
 
 .cssicon{
     color: #0A71B8;
+}
+
+/* FORMS */
+.button-green {
+    color: var(--white-color);
+    background-color: var(--console-primary);
+    border: 3px solid var(--console-darker);
+}
+
+.input-green {
+    background-color: var(--console-primary);
+    color: var(--console-darker);
+    font-weight: bold;
+    border: 3px solid var(--console-darker);
+}
+
+.input-green:focus {
+    background-color: var(--console-primary-hover);
+    border-color: var(--console-primary-hover); 
+    box-shadow: none;
+}
+
+/* ------TABLE------ */
+table, td, thead {
+    border-style: none;
+}
+
+tr:nth-child(odd){
+    background-color: var(--console-dark);
+    border-bottom: 1px solid var(--console-primary);
+}
+
+tr:nth-child(even){
+    background-color: var(--console-darker);
+    border-bottom: 1px solid var(--console-primary);
 }
 
 /* ------HOVER------ */
@@ -109,3 +145,16 @@ white-space: pre-wrap;
 word-break: break-all;
 word-wrap: break-word;
 }
+
+/* ------ MISC ------ */
+.bottom-border{
+    border-bottom: solid 2px var(--console-primary);
+}
+
+/* ------ MEDIA QUERIES ------ */
+@media only screen and (min-width: 992px){
+    .side-border{
+        border-right: solid 2px var(--console-primary);
+    }
+}
+

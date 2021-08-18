@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A coding project by Ryan Jonah</title>
+    <title>Hundo: Zero to One Hundred</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,14 +29,14 @@
     <!-- NAV Section -->
     <nav class="navbar navbar-expand-md fixed-top navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="/img/favicon/android-chrome-192x192.png" width="60" alt="Logo" class="d-inline me-2">App Name</a>
+            <img src="/img/favicon/android-chrome-192x192.png" width="50" alt="Logo" class="d-inline me-2 ms-3">
+            <span class="fw-bold ms-2 fs-2 brand-title">Hundo</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <ul class="navbar-nav me-auto ms-3 mt-2 mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
@@ -65,15 +65,72 @@
                 <div class="col col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            function helloWorld(){
-                                alert("Hello World!");                                
+                            /**
+                            * Get the values from the interface
+                            * Start/controller Function
+                            */
+                            function getValues(){
+                                //Get values from the page
+                                let startValue = document.getElementById("startValue").value;
+                                let endValue   = document.getElementById("endValue").value;
+
+                                //Attempts to validate data
+                                startValue = parseInt(startValue);
+                                endValue   = parseInt(endValue);
+
+                                if (Number.isInteger(startValue) && Number.isInteger(endValue)){
+                                    //call generateNumberes()
+                                    let numbers = generateNumbers(startValue, endValue);
+
+                                    //call DisplayNumbers()
+                                    displayNumbers(numbers);
+                                } else alert("Input must be integers.");
+                            }
+
+                            /**
+                            * Generate numbers from startvalue to the endvalue
+                            * Logic Function(s)
+                            */
+                            function generateNumbers(start, end){
+                                
+                                let numbers = [];
+
+                                //We want to execute all numbers from start to end
+                                for (let index = start; index <= end; index++) {
+                                    numbers.push(index);
+                                };
+
+                                return numbers;
+                            }
+
+                            /**
+                            * Determine the even numbers to display in bold
+                            * Display/View Function
+                            */
+                            function displayNumbers(numList){
+
+                                let templateRows = "";
+
+                                for (let index = 0; index < numList.length; index++) {
+                                    let num = numList[index];
+
+                                    if (num % 2 == 0){
+                                        templateRows += `&lt;tr>&lt;td class="text-green-strong fw-bold"
+                                                    style="text-align:center">${num}&lt;/td>&lt;/tr>`;
+                                    }
+                                    else templateRows += `&lt;tr>&lt;td class="text-green" 
+                                            style="text-align:center">${num}&lt;/td>&lt;/tr>`;
+                            
+
+                                }
+                                document.getElementById("results").innerHTML = templateRows;
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col col-lg-4">
-                    <h5>Hello World</h5>
-                    <p>The code is contained within a function</p>
+                    <h5>Hundo</h5>
+                    <p></p>
                     <p>"helloWorld" is a function that displays an alert</p>
                 </div>
             </div>
@@ -81,7 +138,7 @@
     </main>
 
     <!-- FOOTER Section -->
-    <footer class="footer mt-auto fixed-bottom">
+    <footer class="footer mt-auto">
         <div class="container-fluid text-center">
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-3 gy-4 align-items-center">
                 <div class="col text-green order-last order-lg-first order-md-first">
