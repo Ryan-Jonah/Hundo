@@ -45,11 +45,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
      inkscape:cx="216.30291"
-     inkscape:cy="91.185929"
+     inkscape:cy="143.56688"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -82,7 +82,9 @@
      transform="translate(-46.718915,-83.02436)">
     <g
        id="g1519"
-       transform="translate(-189.01957,210.07878)">
+       transform="translate(-189.01957,210.07878)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <ellipse
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
          id="path1420-9"
